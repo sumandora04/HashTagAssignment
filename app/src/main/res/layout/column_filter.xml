@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="200dp"
+              android:layout_height="200dp"
+              android:layout_gravity="center">
+
+    <TextView
+            android:id="@+id/artist_filter"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="Artist"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+            android:id="@+id/album_filter"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Album"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:padding="@dimen/margin_medium"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+            android:id="@+id/artist_filter"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="Artist"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <TextView
+            android:id="@+id/album_filter"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Album"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:padding="@dimen/margin_medium"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+</LinearLayout>

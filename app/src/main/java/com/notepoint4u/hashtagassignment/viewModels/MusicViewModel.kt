@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.notepoint4u.hashtagassignment.database.MusicDao
 import com.notepoint4u.hashtagassignment.network.MusicApiClient
 import com.notepoint4u.hashtagassignment.network.MusicDetail
@@ -27,10 +26,27 @@ class MusicViewModel(
     private val coroutineScope: CoroutineScope = CoroutineScope(job + Dispatchers.Main)
 
 
-    fun getMusicListFromDb():LiveData<List<MusicDetail>>? {
-       return databaseDao.getMusicList()
+    fun getMusicListFromDb(): LiveData<List<MusicDetail>>? {
+        return databaseDao.getMusicList()
     }
 
+    fun getAlbumFromDb(): LiveData<List<String>>? {
+        return databaseDao.getAlbum()
+    }
+
+
+    fun getArtistFromDb(): LiveData<List<String>>? {
+        return databaseDao.getArtist()
+    }
+
+    fun getMusicTrackForArtist(artist: String): LiveData<List<String>>? {
+        return databaseDao.getMusicTrackForArtist(artist)
+    }
+
+
+    fun getMusicTrackForAlbum(album: String): LiveData<List<String>>? {
+        return databaseDao.getMusicTrackForAlbum(album)
+    }
 
     private fun getAllMusicList() {
         coroutineScope.launch {
@@ -55,7 +71,7 @@ class MusicViewModel(
         if (checkInternetConnectivity()) {
             getAllMusicList()
         } else {
-           Toast.makeText(context,"No internet connection",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "No internet connection", Toast.LENGTH_SHORT).show()
         }
     }
 

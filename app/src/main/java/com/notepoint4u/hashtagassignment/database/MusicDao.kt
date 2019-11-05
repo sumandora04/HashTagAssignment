@@ -17,4 +17,19 @@ interface MusicDao {
 
     @Query("SELECT * FROM music_detail_table ORDER BY musicTrackId desc")
     fun getMusicList(): LiveData<List<MusicDetail>>?
+
+    @Query("SELECT DISTINCT artistName FROM music_detail_table ORDER BY musicTrackId ASC")
+    fun getArtist(): LiveData<List<String>>?
+
+    @Query("SELECT DISTINCT albumName FROM music_detail_table ORDER BY musicTrackId ASC")
+    fun getAlbum(): LiveData<List<String>>?
+
+
+    @Query("SELECT DISTINCT musicTackName FROM music_detail_table where artistName =:artist ORDER BY musicTrackId ASC")
+    fun getMusicTrackForArtist(artist:String): LiveData<List<String>>?
+
+    @Query("SELECT DISTINCT musicTackName FROM music_detail_table where albumName =:album ORDER BY musicTrackId ASC")
+    fun getMusicTrackForAlbum(album:String): LiveData<List<String>>?
+
+
 }
